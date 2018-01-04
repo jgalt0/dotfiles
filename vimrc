@@ -71,10 +71,7 @@ set statusline+=%P
 
 ""colors
 syntax on
-color dracula
-hi TabLine ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#586270 gui=NONE
-hi TabLineFill ctermbg=NONE ctermfg=11 cterm=NONE guibg=NONE guifg=#383E47 gui=NONE
-hi TabLineSel ctermbg=NONE ctermfg=11 cterm=NONE guibg=NONE guifg=#383E47 gui=NONE
+color elflord
 "set  t_Co=256
 "highlight Normal ctermbg=0
 
