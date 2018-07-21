@@ -1,0 +1,206 @@
+set $mod Mod4
+floating_modifier $mod
+
+new_window pixel 0
+new_float pixel 0
+hide_edge_borders none
+
+font xft:Liberation Mono 1
+
+bindsym $mod+t layout toggle
+
+bindsym $mod+Mod1+Right workspace next
+bindsym $mod+Mod1+Left workspace prev
+
+bindsym $mod+Mod1+l workspace next
+bindsym $mod+Mod1+h workspace prev
+
+bindsym $mod+Shift+m bar mode toggle
+
+bindsym $mod+Return exec st
+
+# disable F1 help menus
+bindsym F1 nop
+
+bindsym button4 nop
+bindsym button5 nop
+bindsym button6 nop
+bindsym button7 nop
+bindsym button8 nop
+bindsym button9 nop
+
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+r restart
+
+bindsym $mod+w exec st -e ranger
+
+bindsym $mod+d exec dmenu_run -i -h 20 -fn "Liberation Mono-9" -nb '#eff1f5' -nf '#000000' -sb '#b48ead' 
+bindsym $mod+y exec clipmenu -i -h 20 -fn "Liberation Mono-9" -nb '#eff1f5' -nf '#000000' -sb '#b48ead' 
+
+bindsym $mod+Shift+f exec surf -b -g about:blank
+
+bindsym $mod+Shift+s exec spotify
+
+bindsym $mod+Shift+w exec i3-msg move workspace to output left
+
+bindsym $mod+a focus parent
+
+bindsym $mod+Control+m exec ~/Scripts/laptop.sh && xmodmap .xmodmap-manjaro
+bindsym $mod+Control+d exec ~/Scripts/desktop.sh && xmodmap .xmodmap-manjaro
+
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+
+bindsym $mod+Tab workspace next
+
+bindsym $mod+Shift+Control+s exec ~/Scripts/exit.sh && poweroff
+bindsym $mod+Shift+Control+r exec ~/Scripts/exit.sh && reboot
+bindsym $mod+Shift+Control+e exec ~/Scripts/exit.sh && i3-msg exit
+bindsym $mod+Shift+Control+l exec blurlock
+
+bindsym $mod+control+plus gaps inner all plus 5
+bindsym $mod+control+minus gaps inner all minus 5
+
+bindsym $mod+plus exec "amixer set Master 3%+"
+bindsym $mod+minus exec "amixer set Master 3%-"
+bindsym $mod+c exec "amixer set Master toggle"
+
+bindsym XF86AudioRaiseVolume exec "amixer set Master 3%+"
+bindsym XF86AudioLowerVolume exec "amixer set Master 3%-"
+bindsym XF86AudioMute exec "amixer set Master toggle"
+
+bindsym $mod+Shift+minus exec "xbacklight -dec 5"
+bindsym $mod+Shift+plus exec "xbacklight -inc 5"
+
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+Ctrl+Left resize shrink width 20 px or 5 ppt
+bindsym $mod+Ctrl+Down resize grow height 20 px or 5 ppt
+bindsym $mod+Ctrl+Up resize shrink height 20 px or 5 ppt
+bindsym $mod+Ctrl+Right resize grow width 20 px or 5 ppt
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Ctrl+h resize shrink width 20 px or 5 ppt
+bindsym $mod+Ctrl+j resize grow height 20 px or 5 ppt
+bindsym $mod+Ctrl+k resize shrink height 20 px or 5 ppt
+bindsym $mod+Ctrl+l resize grow width 20 px or 5 ppt
+
+workspace_auto_back_and_forth no
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
+bindsym $mod+s split h
+bindsym $mod+v split v
+bindsym $mod+q split toggle
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+Shift+space floating toggle
+
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+
+bindsym $mod+Shift+1 move container to workspace $ws1;workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2;workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3;workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4;workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5;workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6;workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7;workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8;workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9;workspace $ws9
+
+
+bar
+{
+	status_command i3status
+	position top
+	workspace_buttons yes
+	mode dock
+	modifier Mod2
+	bindsym button1 nop
+	bindsym button2 nop
+	bindsym button3 nop
+	bindsym button4 nop
+	bindsym button5 nop
+	bindsym button6 nop
+	bindsym button7 nop
+	bindsym button8 nop
+	bindsym button9 nop
+	font xft:Liberation Mono 9
+	strip_workspace_numbers yes colors
+	{
+		background #eff1f5
+		statusline #000000
+		separator  #eff1f5
+		focused_workspace  #eff1f5 #eff1f5 #000000
+		active_workspace   #eff1f5 #eff1f5 #000000
+		inactive_workspace #eff1f5 #eff1f5 #000000
+		urgent_workspace   #eff1f5 #eff1f5 #000000
+	}
+}
+
+
+# class                 border  backgr. text    indic.  child_border
+client.focused          #b48ead #b48ead #b48ead #b48ead #b48ead
+client.focused_inactive #eff1f5 #eff1f5 #eff1f5 #eff1f5 #eff1f5
+client.unfocused        #eff1f5 #eff1f5 #eff1f5 #eff1f5 #eff1f5
+client.urgent           #eff1f5 #eff1f5 #eff1f5 #eff1f5 #eff1f5
+client.placeholder      #eff1f5 #eff1f5 #eff1f5 #eff1f5 #eff1f5
+client.background       #eff1f5
+
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id xautolock -time 10 -locker blurlock
+exec pulseaudio
+exec xmodmap ~/.xmodmap-manjaro
+exec clipmenud
+
+gaps inner 15
