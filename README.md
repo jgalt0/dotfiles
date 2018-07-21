@@ -5,4 +5,3 @@ my unix/linux setup config
 * i3 config  
 * i3 status config  
 * vim config  
-* termite terminal emulator config  
